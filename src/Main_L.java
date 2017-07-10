@@ -1,9 +1,6 @@
-import java.awt.Color;
-import java.awt.Container;
-import java.awt.FlowLayout;
+import java.awt.*;
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
+import javax.swing.*;
 
 /*
  * 명품 Java Programming 9장 자바 GUI 기초
@@ -13,19 +10,21 @@ import javax.swing.JFrame;
 public class Main_L extends JFrame {
 	
 	Main_L() {
-		//9-1예제
-		setTitle("ContentPane과 JFrame");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//9-2예제
+		setTitle("FlowLayout Sample"); // 프레임의 타이틀 달기
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // 프레임 윈도우를 닫으면 프로그램 종료
 		
-		Container contentPane = getContentPane();
-		contentPane.setBackground(Color.ORANGE);
-		contentPane.setLayout(new FlowLayout());
-		contentPane.add(new JButton("OK"));
-		contentPane.add(new JButton("Cancel"));
-		contentPane.add(new JButton("Ignore"));
+		Container c = getContentPane();
+		c.setLayout(new FlowLayout(FlowLayout.LEFT, 30, 40)); // 컨텐트팬에 FlowLayout 배치관리자 설정
 		
-		setSize(300, 150);
-		setVisible(true);
+		c.add(new JButton("add"));
+		c.add(new JButton("sub"));
+		c.add(new JButton("mul"));
+		c.add(new JButton("div"));
+		c.add(new JButton("Calculate"));
+		
+		setSize(300, 200); // 프레임 크기 300X200 설정
+		setVisible(true); // 프레임을 화면에 출력
 	}
 	
 	public static void main(String[] args) {
