@@ -7,9 +7,13 @@ import javax.swing.*;
 /*
  * 명품 Java Programming 9장 자바 GUI 기초
  * 예제중심으로 코드 작성할 예정
+ * 명품 Java Programming 10장 자바의 이벤트 처리
  */
 
 public class Main_L extends JFrame {
+	
+	JPanel contentPane_t2 = new JPanel();
+	JLabel la_t2;
 	
 	Main_L() {
 		/*
@@ -113,6 +117,7 @@ public class Main_L extends JFrame {
 		setVisible(true);
 		*/
 		
+		/*
 		// 10-1 예제
 		setTitle("Null Container Sample");
 		setLayout(new FlowLayout());
@@ -129,6 +134,59 @@ public class Main_L extends JFrame {
 		
 		setSize(300, 150);
 		setVisible(true);
+		*/
+		
+		// 10-2 예제
+		setTitle("Mouse 이벤트 예제");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		setContentPane(contentPane_t2);
+		contentPane_t2.setLayout(null);
+		contentPane_t2.addMouseListener(new MyMouseListener());
+		
+		la_t2 = new JLabel("Hello");
+		la_t2.setSize(50, 20);
+		la_t2.setLocation(30, 30);
+		contentPane_t2.add(la_t2);
+		
+		setSize(200, 200);
+		setVisible(true);
+	}
+	
+	class MyMouseListener implements MouseListener {
+		
+		@Override
+		public void mouseClicked(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+		@Override
+		public void mouseEntered(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+		@Override
+		public void mouseExited(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void mousePressed(MouseEvent e) {
+			// TODO Auto-generated method stub
+			int x = e.getX();
+			int y = e.getY();
+			la_t2.setLocation(x, y);
+		}
+
+		@Override
+		public void mouseReleased(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+		
 	}
 	
 	public static void main(String[] args) {
@@ -140,25 +198,40 @@ public class Main_L extends JFrame {
 // MouseListener을 상속받아 Mouse 리스너를 작성한다.
 // MouseListener의 5개의 메서드를 모두 구현한다.
 class MyMouseListener implements MouseListener {
-
-	@Override
-	public void mouseClicked(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
+	
+	/* 10-1 예제
 	@Override
 	public void mouseEntered(MouseEvent e) { // 마우스가 버튼에 올라올 때 호출
 		// TODO Auto-generated method stub
 		JButton jb = (JButton)e.getSource(); // 마우스가 올라간 버튼의 주소를 알아낸다.
 		jb.setBackground(Color.RED); // 버튼의 배경색을 빨간색으로 변경
 	}
-
+	*/
+	/* 10-1 예제
 	@Override
-	public void mouseExited(MouseEvent e) { // 마우스가 버튼에서 내려갈 때 호출
+	public void mouseEntered(MouseEvent e) { // 마우스가 버튼에 올라올 때 호출
 		// TODO Auto-generated method stub
-		JButton jb = (JButton)e.getSource();
-		jb.setBackground(Color.YELLOW);
+		JButton jb = (JButton)e.getSource(); // 마우스가 올라간 버튼의 주소를 알아낸다.
+		jb.setBackground(Color.RED); // 버튼의 배경색을 빨간색으로 변경
+	}
+	*/
+	
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
