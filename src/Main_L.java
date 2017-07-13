@@ -10,6 +10,23 @@ import javax.swing.*;
 public class Main_L extends JFrame {
 	
 	Main_L() {
+		/*
+		//9-1예제
+		setTitle("ContentPane과 JFrame"); // 프레임의 타이틀 달기
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // 프레임 윈도우를 닫으면 프로그램 종료
+		
+		Container c = getContentPane();
+		c.setBackground(Color.ORANGE);
+		c.setLayout(new FlowLayout()); // 컨텐트팬에 FlowLayout 배치관리자 설정
+		c.add(new JButton("Ok"));
+		c.add(new JButton("Cancle"));
+		c.add(new JButton("Ignore"));
+		
+		setSize(300, 150); // 프레임 크기 300X200 설정
+		setVisible(true); // 프레임을 화면에 출력
+		*/
+		
+		/*
 		//9-2예제
 		setTitle("FlowLayout Sample"); // 프레임의 타이틀 달기
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // 프레임 윈도우를 닫으면 프로그램 종료
@@ -25,6 +42,22 @@ public class Main_L extends JFrame {
 		
 		setSize(300, 200); // 프레임 크기 300X200 설정
 		setVisible(true); // 프레임을 화면에 출력
+		*/
+		
+		//9-3예제
+		setTitle("BorderLayout Sample");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		Container c = getContentPane();
+		c.setLayout(new BorderLayout());
+		c.add(new JButton("Calculate"), BorderLayout.CENTER);
+		c.add(new JButton("add"), BorderLayout.NORTH);
+		c.add(new JButton("sub"), BorderLayout.SOUTH);
+		c.add(new JButton("mul"), BorderLayout.EAST);
+		c.add(new JButton("div"), BorderLayout.WEST);
+		
+		setSize(300, 200);
+		setVisible(true);
 	}
 	
 	public static void main(String[] args) {
