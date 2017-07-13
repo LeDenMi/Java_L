@@ -1,4 +1,6 @@
 import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 import javax.swing.*;
 
@@ -11,7 +13,7 @@ public class Main_L extends JFrame {
 	
 	Main_L() {
 		/*
-		//9-1예제
+		// 9-1예제
 		setTitle("ContentPane과 JFrame"); // 프레임의 타이틀 달기
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // 프레임 윈도우를 닫으면 프로그램 종료
 		
@@ -27,7 +29,7 @@ public class Main_L extends JFrame {
 		*/
 		
 		/*
-		//9-2예제
+		// 9-2예제
 		setTitle("FlowLayout Sample"); // 프레임의 타이틀 달기
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // 프레임 윈도우를 닫으면 프로그램 종료
 		
@@ -45,7 +47,7 @@ public class Main_L extends JFrame {
 		*/
 		
 		/*
-		//9-3예제
+		// 9-3예제
 		setTitle("BorderLayout Sample");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
@@ -62,7 +64,7 @@ public class Main_L extends JFrame {
 		*/
 		
 		/*
-		//9-4 예제
+		// 9-4 예제
 		setTitle("GridLayout Sample");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
@@ -84,7 +86,8 @@ public class Main_L extends JFrame {
 		setVisible(true);
 		*/
 		
-		//9-5 예제
+		/*
+		// 9-5 예제
 		setTitle("Null Container Sample");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
@@ -108,10 +111,66 @@ public class Main_L extends JFrame {
 		
 		setSize(300, 200);
 		setVisible(true);
+		*/
+		
+		// 10-1 예제
+		setTitle("Null Container Sample");
+		setLayout(new FlowLayout());
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		// 버튼 컴포넌트를 생성하고 MouseListener를 단다.
+		JButton jb = new JButton("Mouse Event 태스트 버튼");
+		jb.setBackground(Color.YELLOW);
+		MyMouseListener listener = new MyMouseListener();
+		jb.addMouseListener(listener);
+		
+		// 버튼을 컨텐트팬에 단다.
+		add(jb);
+		
+		setSize(300, 150);
+		setVisible(true);
 	}
 	
 	public static void main(String[] args) {
 		new Main_L();
+	}
+	
+}
+
+// MouseListener을 상속받아 Mouse 리스너를 작성한다.
+// MouseListener의 5개의 메서드를 모두 구현한다.
+class MyMouseListener implements MouseListener {
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) { // 마우스가 버튼에 올라올 때 호출
+		// TODO Auto-generated method stub
+		JButton jb = (JButton)e.getSource(); // 마우스가 올라간 버튼의 주소를 알아낸다.
+		jb.setBackground(Color.RED); // 버튼의 배경색을 빨간색으로 변경
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) { // 마우스가 버튼에서 내려갈 때 호출
+		// TODO Auto-generated method stub
+		JButton jb = (JButton)e.getSource();
+		jb.setBackground(Color.YELLOW);
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }
