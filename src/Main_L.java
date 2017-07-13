@@ -44,6 +44,7 @@ public class Main_L extends JFrame {
 		setVisible(true); // 프레임을 화면에 출력
 		*/
 		
+		/*
 		//9-3예제
 		setTitle("BorderLayout Sample");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -55,6 +56,28 @@ public class Main_L extends JFrame {
 		c.add(new JButton("sub"), BorderLayout.SOUTH);
 		c.add(new JButton("mul"), BorderLayout.EAST);
 		c.add(new JButton("div"), BorderLayout.WEST);
+		
+		setSize(300, 200);
+		setVisible(true);
+		*/
+		
+		//9-4 예제
+		setTitle("GridLayout Sample");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		Container c = getContentPane();
+		GridLayout grid = new GridLayout(4, 2); // 4x2 그리드의 GridLayout 배치관리자 생성
+		
+		grid.setVgap(5); // 그래드 사이의 수직 간격을 5픽셀로 설정
+		c.setLayout(grid);
+		c.add(new JLabel(" 이름"));
+		c.add(new JTextField(""));
+		c.add(new JLabel(" 학번"));
+		c.add(new JTextField(""));
+		c.add(new JLabel(" 학과"));
+		c.add(new JTextField(""));
+		c.add(new JLabel(" 과목"));
+		c.add(new JTextField(""));
 		
 		setSize(300, 200);
 		setVisible(true);
