@@ -61,6 +61,7 @@ public class Main_L extends JFrame {
 		setVisible(true);
 		*/
 		
+		/*
 		//9-4 예제
 		setTitle("GridLayout Sample");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -78,6 +79,32 @@ public class Main_L extends JFrame {
 		c.add(new JTextField(""));
 		c.add(new JLabel(" 과목"));
 		c.add(new JTextField(""));
+		
+		setSize(300, 200);
+		setVisible(true);
+		*/
+		
+		//9-5 예제
+		setTitle("Null Container Sample");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		Container c = getContentPane();
+		c.setLayout(null); // 컨텐트팬의 배치관리자 제거
+		
+		// JLabel 컴포넌트 생성하고 직접 위치와 크기를 지정한다.
+		JLabel la = new JLabel("Hello, Press Buttons!");
+		la.setLocation(130, 50);
+		la.setSize(200, 20);
+		c.add(la);
+		
+		// 9개의 버튼 컴포넌트를 생성하고 모두 동일한 크기로 설정한다.
+		// 위치는 서로 다르게 설정
+		for(int i=1;i<=9;i++) {
+			JButton jb = new JButton(Integer.toString(i));
+			jb.setLocation(i*15, i*15); // 버튼의 위치 설정
+			jb.setSize(50, 20); // 9개의 버튼의 크기는 동일하게 50x20 크기
+			c.add(jb); // 버튼을 컨텐트팬에 부착
+		}
 		
 		setSize(300, 200);
 		setVisible(true);
